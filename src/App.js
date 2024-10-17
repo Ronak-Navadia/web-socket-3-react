@@ -1,24 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import Websocket from './components/WebSocket';
+import { WebsocketProvider, socket } from './context/WebsocketContext';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <WebsocketProvider value={socket}>
+      <Websocket/>
+    </WebsocketProvider>
   );
 }
 
